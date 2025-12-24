@@ -1,0 +1,17 @@
+meta {
+  name: getWeatherData
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/getweather
+  body: none
+  auth: inherit
+}
+
+params:query {
+  ~latitude: 
+  ~longitude: 
+  ~metric: 
+}
