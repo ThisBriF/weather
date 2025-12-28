@@ -1,6 +1,5 @@
 package hill.matt.weather.config;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.context.annotation.Bean;
@@ -13,17 +12,17 @@ import io.swagger.v3.oas.models.servers.Server;
 @Configuration
 public class OpenApiConfig {
 
-    @Bean
-    public OpenAPI customOpenAPI() {
-        List<Server> servers = List.of(
-                new Server().url("http://localhost:8080").description("Local"));
+        @Bean
+        public OpenAPI customOpenAPI() {
+                List<Server> servers = List.of(
+                                new Server().url("http://localhost:8080").description("Local"));
 
-        return new OpenAPI()
-                .info(new Info()
-                        .title("Weather API")
-                        .version("0.0.1")
-                        .description("A weather API that fetches and returns weather data from a 3rd party API."))
-                .servers(servers);
-    }
+                return new OpenAPI()
+                                .info(new Info()
+                                                .title("Weather API")
+                                                .version("0.0.1")
+                                                .description("A weather API that fetches and returns weather data from a 3rd party API."))
+                                .servers(servers);
+        }
 
 }
