@@ -9,8 +9,7 @@ import org.springframework.web.client.RestClient;
 public class VisualCrossingClientConfig {
 
     @Bean
-    public RestClient visualCrossingClient(RestClient.Builder builder,
-            @Value("${weatherapi.base-url}") String baseUrl) {
+    public RestClient visualCrossingClient(@Value("${weatherapi.base-url}") String baseUrl) {
         return RestClient.builder().baseUrl(baseUrl).build();
     }
 
