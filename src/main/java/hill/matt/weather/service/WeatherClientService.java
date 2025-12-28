@@ -2,13 +2,20 @@ package hill.matt.weather.service;
 
 import org.springframework.stereotype.Service;
 
-import hill.matt.weather.config.WeatherApiConfig;
+import hill.matt.weather.model.ApiResponse;
+import hill.matt.weather.model.apiresponse.VisualCrossingWeatherApiResponse;
 import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
 public class WeatherClientService {
 
-    private final WeatherApiConfig weatherApiConfig;
+    private final VisualCrossingWeatherApiService visualCrossingWeatherApiService;
+
+    public ApiResponse retrieveWeatherForecase(String latitude, String longitude) {
+        VisualCrossingWeatherApiResponse weatherResponse = visualCrossingWeatherApiService
+                .retrieveWeatherForecastData(latitude, longitude);
+        return new ApiResponse(weatherResponse);
+    }
 
 }
