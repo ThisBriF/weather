@@ -1,5 +1,9 @@
 package hill.matt.weather.model;
 
-public record IncomingRequest(String latitude, String longitude, String metric) {
+import jakarta.validation.constraints.NotEmpty;
 
-}
+public record IncomingRequest(
+    @NotEmpty
+    String latitude,
+    @NotEmpty
+    String longitude) {}
