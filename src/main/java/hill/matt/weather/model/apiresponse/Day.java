@@ -5,7 +5,9 @@ import java.time.OffsetTime;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
+import hill.matt.weather.config.TimeCustomerDeserializer;
 import lombok.Data;
 
 @Data
@@ -30,8 +32,10 @@ public class Day {
     @JsonProperty("cloudcover")
     private double cloudcover;
     @JsonProperty("sunrise")
+    @JsonDeserialize(using = TimeCustomerDeserializer.class)
     private OffsetTime sunrise;
     @JsonProperty("sunset")
+    @JsonDeserialize(using = TimeCustomerDeserializer.class)
     private OffsetTime sunset;
     @JsonProperty("conditions")
     private String conditions;
