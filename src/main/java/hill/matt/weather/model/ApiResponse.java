@@ -1,5 +1,6 @@
 package hill.matt.weather.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import hill.matt.weather.model.apiresponse.Day;
@@ -14,7 +15,7 @@ public class ApiResponse {
     private String resolvedAddress;
     private String timezone;
 
-    private List<ForecastDays> days;
+    private List<ForecastDays> days = new ArrayList<>();
 
     public ApiResponse(VisualCrossingWeatherApiResponse weatherResponse) {
         this.latitude = weatherResponse.getLatitude();
