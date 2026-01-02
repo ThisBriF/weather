@@ -3,6 +3,7 @@ package hill.matt.weather.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
@@ -40,5 +41,14 @@ public class GlobalExceptionHandler {
 
         return ResponseEntity.status(returnStatus).body(problemDetail);
     }
-    
+
+    @ExceptionHandler(BindException.class)
+    public ResponseEntity<ProblemDetail> handleBindException(BindException ex) {
+        ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, "Validation Failed");
+        problemDetail.setTitle("Invalid Request Parameters");
+        problemDetail.setProperty("errors",
+                ex.getBindingResult().getAllErrors().stream().map(e -> e.getDefaultMessage()).toList());
+        return ResponseEntity.badRequest().body(problemDetail);
+    }
+
 }
