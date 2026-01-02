@@ -20,7 +20,7 @@ public class WeatherApiController {
 
     @GetMapping("/getweather")
     public ResponseEntity<ApiResponse> getWeatherData(@ParameterObject @Valid IncomingRequest request) {
-        return new ResponseEntity<>(service.retrieveWeatherForecase(request.latitude(), request.longitude()),
+        return new ResponseEntity<>(service.retrieveWeatherForecast(request.latitude(), request.longitude()),
                 HttpStatus.OK);
     }
 

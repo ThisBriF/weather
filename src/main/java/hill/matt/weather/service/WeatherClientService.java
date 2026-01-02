@@ -12,7 +12,7 @@ public class WeatherClientService {
 
     private final VisualCrossingWeatherApiService visualCrossingWeatherApiService;
 
-    public ApiResponse retrieveWeatherForecase(String latitude, String longitude) {
+    public ApiResponse retrieveWeatherForecast(String latitude, String longitude) {
         VisualCrossingWeatherApiResponse weatherResponse = visualCrossingWeatherApiService
                 .retrieveWeatherForecastData(latitude, longitude);
         return new ApiResponse(weatherResponse);

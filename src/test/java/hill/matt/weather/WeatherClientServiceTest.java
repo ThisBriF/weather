@@ -45,7 +45,7 @@ class WeatherClientServiceTest {
                 .thenReturn(mockResponse);
 
         // Act
-        ApiResponse response = weatherClientService.retrieveWeatherForecase("51.5074", "0.1278");
+        ApiResponse response = weatherClientService.retrieveWeatherForecast("51.5074", "0.1278");
 
         // Assert
         assertNotNull(response);
