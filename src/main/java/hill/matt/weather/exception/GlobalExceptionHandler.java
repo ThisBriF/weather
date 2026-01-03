@@ -4,8 +4,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindException;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
@@ -46,8 +50,13 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ProblemDetail> handleBindException(BindException ex) {
         ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, "Validation Failed");
         problemDetail.setTitle("Invalid Request Parameters");
-        problemDetail.setProperty("errors",
-                ex.getBindingResult().getAllErrors().stream().map(e -> e.getDefaultMessage()).toList());
+        Map<String, String> errors = new HashMap<>();
+        ex.getBindingResult().getAllErrors().forEach(error -> {
+            String fieldName = error instanceof FieldError ? ((FieldError) error).getField() : error.getObjectName();
+            String errorMessage = error.getDefaultMessage();
+            errors.put(fieldName, errorMessage);
+        });
+        problemDetail.setProperty("errors", errors);
         return ResponseEntity.badRequest().body(problemDetail);
     }
 
