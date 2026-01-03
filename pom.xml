@@ -18,11 +18,7 @@
 	<licenses>
 		<license />
 	</licenses>
-	<developers>
-		<developer>
-			<name>Hill, Matthew Eric</name>
-		</developer>
-	</developers>
+	<developers />
 	<scm>
 		<connection />
 		<developerConnection />
