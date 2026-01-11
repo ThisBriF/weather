@@ -5,8 +5,7 @@ import java.time.OffsetTime;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import tools.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import hill.matt.weather.config.TimeCustomerDeserializer;
 import lombok.Data;
