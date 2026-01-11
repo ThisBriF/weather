@@ -8,7 +8,7 @@ import org.springframework.web.client.RestClient;
 
 import hill.matt.weather.config.WeatherApiConfig;
 import hill.matt.weather.exception.WeatherClientException;
-import hill.matt.weather.model.apiresponse.VisualCrossingWeatherApiResponse;
+import hill.matt.weather.model.visualcrossing.VisualCrossingWeatherApiResponse;
 import lombok.RequiredArgsConstructor;
 
 @Service

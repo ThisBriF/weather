@@ -3,7 +3,7 @@ package hill.matt.weather.service;
 import org.springframework.stereotype.Service;
 
 import hill.matt.weather.model.ApiResponse;
-import hill.matt.weather.model.apiresponse.VisualCrossingWeatherApiResponse;
+import hill.matt.weather.model.visualcrossing.VisualCrossingWeatherApiResponse;
 import lombok.RequiredArgsConstructor;
 
 @Service

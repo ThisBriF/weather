@@ -3,8 +3,8 @@ package hill.matt.weather.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import hill.matt.weather.model.apiresponse.Day;
-import hill.matt.weather.model.apiresponse.VisualCrossingWeatherApiResponse;
+import hill.matt.weather.model.visualcrossing.Day;
+import hill.matt.weather.model.visualcrossing.VisualCrossingWeatherApiResponse;
 import lombok.Data;
 
 @Data

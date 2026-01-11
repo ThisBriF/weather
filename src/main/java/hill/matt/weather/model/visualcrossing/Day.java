@@ -1,4 +1,4 @@
-package hill.matt.weather.model.apiresponse;
+package hill.matt.weather.model.visualcrossing;
 
 import java.time.LocalDate;
 import java.time.OffsetTime;

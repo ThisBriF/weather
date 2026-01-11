@@ -1,4 +1,4 @@
-package hill.matt.weather.model.apiresponse;
+package hill.matt.weather.model.visualcrossing;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

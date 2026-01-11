@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 import hill.matt.weather.model.ApiResponse;
-import hill.matt.weather.model.apiresponse.VisualCrossingWeatherApiResponse;
+import hill.matt.weather.model.visualcrossing.VisualCrossingWeatherApiResponse;
 import hill.matt.weather.service.VisualCrossingWeatherApiService;
 import hill.matt.weather.service.WeatherClientService;
 
