@@ -19,7 +19,10 @@ public class VisualCrossingWeatherApiService {
     private final RestClient restClient;
     private final WeatherApiConfig weatherApiConfig;
 
-    @Cacheable("weatherCache")
+    @Cacheable(
+        cacheNames = "weather",
+        key = "{#latitude, #longitude}"
+    )
     public VisualCrossingWeatherApiResponse retrieveWeatherForecastData(String latitude, String longitude) {
         return restClient.get()
                 .uri(uriBuilder -> uriBuilder.path("/{latitude},{longitude}")
